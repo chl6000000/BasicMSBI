@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>HTTP状态码</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="./area.js"></script>
+</head>
+
+<body>
+    <div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">信息性状态码</a></li>
+            <li role="presentation"><a href="#success" aria-controls="success" role="tab" data-toggle="tab">成功状态码</a></li>
+            <li role="presentation"><a href="#redirect" aria-controls="redirect" role="tab" data-toggle="tab">重定向状态码</a></li>
+            <li role="presentation"><a href="#clientError" aria-controls="clientError" role="tab" data-toggle="tab">客户端错误状态码</a></li>
+            <li role="presentation"><a href="#serverError" aria-controls="serverError" role="tab" data-toggle="tab">服务器错误状态码</a></li>
+            <li role="presentation"><a href="#placeHolder" aria-controls="placeHolder" role="tab" data-toggle="tab">-</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="home">
+                <section id="json1">
+                    <div class="page-header">
+                        <h2>100~199</h2>
+                    </div>
+                    <div class="form-group has-success">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+          100 Continue
+        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
+                                    <div class="panel-body">
+                                        说明收到了请求的初始部分，请客户端继续。发送了这个状态码之后，服务器在收到请求之后必须进行响应。 </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+         101 Switching Protocols
+        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false">
+                                    <div class="panel-body">
+                                        说明服务器正在根据客户端的指定，将协议切换成Update首部所列的协议 </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="success">
+                <section>
+                    <div class="page-header">
+                        <h2>200~299</h2>
+                    </div>
+                    <div class="form-group has-success">
+                        <div class="panel-group" id="accordionSuccess" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="SuccessheadingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordionSuccess" href="#SuccesscollapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+          200 OK
+        </a>
+                                    </h4>
+                                </div>
+                                <div id="SuccesscollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="SuccessheadingOne" aria-expanded="false" style="height: 0px;">
+                                    <div class="panel-body">
+                                        请求没问题，实体的主体部分包含了所请求的资源</div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="SuccessheadingTwo">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionSuccess" href="#SuccesscollapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+         201 Create
+        </a>
+                                    </h4>
+                                </div>
+                                <div id="SuccesscollapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="SuccessheadingTwo" aria-expanded="false">
+                                    <div class="panel-body">
+                                        用于创建服务器对象的请求（比如, PUT）. 响应的实体主体部分中应该包含各种引用了已创建的资源的URL, Location 首部包含的则是最具体的引用。</div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="heading3">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionSuccess" href="#collapse3" aria-expanded="false" aria-controls="#collapse3">
+                                202 Accepted</a></h4>
+                                </div>
+                                <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3" aria-expanded="false">
+                                    <div class="panel-body">
+                                        请求已被接受，但服务器还未对其执行任何动作。不能保证服务器会完成这个请求；这只是意味着接受请求时，它看起来是有效的。服务器应该在实体的主体部分包含对请求状态的的描述，或许还应该有对请求完成时间的估计。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="successHeading4">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionSuccess" href="#successCollapse4" aria-expanded="false" aria-controls="successCollapse4">
+                                            203 Non-Authoritative Information
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="successCollapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="successHeading4" aria-expanded="false">
+                                    <div class="panel-body">
+                                        实体首部包含的信息不是来自于源服务器，而是来自资源的一份副本。如果中间结点上有一份资源副本，但无法或者没有对它所发送的与资源有关的元信息进行验证，就会出现这种情况。 这种响应码并不是非用不可的；如果实体首部来自源端服务器，响应为200状态的应用程序就可以将其作为一种可选项。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="redirect">
+                <section>
+                    <div class="page-header">
+                        <h2>300~399</h2>
+                    </div>
+                    <div class="form-group has-success">
+                        sdfs
+                    </div>
+
+
+                </section>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="clientError">
+                <section>
+                    <div class="page-header">
+                        <h2>400~499</h2>
+                    </div>
+                    <div class="form-group has-success">
+                        sdfs
+                    </div>
+
+
+                </section>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="serverError">
+                <section>
+                    <div class="page-header">
+                        <h2>500~599</h2>
+                    </div>
+                    <div class="form-group has-success">
+                        sdfs
+                    </div>
+
+
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
