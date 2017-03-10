@@ -11,7 +11,7 @@ Member, A single item from a dimension.
 
 
 ## 元组 ##
-Tuple, One member from each dimension.
+Tuple, One member from each dimension. defined by slicer specification and row/column set. 
 包含在多维数据集中的数据元素称为“单元”。通过对多维数据集中包含的每个属性层次结构指定一个成员可以唯一地标识一个单元。标识一个单元的属性的组合称为“元组”。
 元组标识多维数据集中的单元。一个元组由多维数据集中每个层次结构中的一个成员组成（显式或隐式引用）。如果特定层次结构中的成员没有在元组中显式引用，则该层次结构中的默认成员将隐式包含在元组中。 
 在 MDX 中，元组根据其复杂性依照语法进行构造。如果元组只由一个层次结构中的一个成员组成（通常称为“简单元组”），则下列语法是可以接受的：
