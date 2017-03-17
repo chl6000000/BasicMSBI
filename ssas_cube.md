@@ -36,6 +36,9 @@ Time.[2nd half]
 
 ## 集 ##
 Set, Multiple Members on an Axis.
+集合是由多个元组组成，多个元组以逗号分隔，前后以{}包含起来。
+若集合中只有一个元组则可以省略{}。
+一个集合内所有的元组必须具有相同维度性。
 集是零个、一个或多个元组的有序集合。集最常用于定义 MDX 查询中的查询轴和切片器轴，因此可以只有一个元组，在某些情况下，也可以为空。下面的示例显示了具有两个元组的集：
 ```
 { (Time.[1st half], Route.nonground.air), (Time.[2nd half], Route.nonground.sea) }
@@ -43,9 +46,18 @@ Set, Multiple Members on an Axis.
 
 ## 轴 ##
 Axis, The Row and Column Headings of a report.
+Statement can show 128 axis, but only display two dimension in page. 
+Columns =Axis(0); Rows =Axis(1)
+Axis must be use Set.
+Use Set two display multi members in Axis.
+It can be one or multi tuple
+one dimension(hierarchy) only visible in one Axis. 
+
 
 ## 切片 ##
 Slicer, The Filter Specification for a report.
+
+SELECT {Set} ON Axes FROM Cube WHERE Tuple 
 
 ## 运算式 ##
 MDX Expression, 
