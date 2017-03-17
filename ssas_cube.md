@@ -81,7 +81,12 @@ CurrentMember, Parent, PrevMember, ParallelPeriod, Ancestor
 	Can be used with any dimension, but is typically used with time dimension
 	Appears in the member group of the function list
 #### ParallelPeriod ####
-	
+	return a member of a previous member with the same relative position.
+	default value,
+		if no specify hierarchy or member expression, default value is Time type dimension, Time.CurrentMember.
+		If point specify hierarchy expression, but not point specify member expression, default value is Level_Expression.Hierarchy.CurrentMember.
+		Default index value is 1. 
+		Default hierarchy is the hierarchy of specify member ' parent. 
 #### Ancestor ####
 	*Returns the ancestor of a member*
 		at a specified level
