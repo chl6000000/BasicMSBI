@@ -46,3 +46,72 @@ Axis, The Row and Column Headings of a report.
 
 ## 切片 ##
 Slicer, The Filter Specification for a report.
+
+## 运算式 ##
+MDX Expression, 
+### 字符串函数 ###
+Name, Properties
+#### Name ####
+	*Returns member name as a string*
+	*Has Three versions*
+		Name: Dimension or hierarchy
+		Name: Level
+		Name: Member
+	*Appears in string group of functions list*
+#### Properties ####
+	*Returns a member property*
+	*Requires property name in Quotation marks*
+	*Returns an error if property name does not exist*
+	*Returns property value as a string even if it is a number*
+	*default member perperty include Name, ID, key, caption etc.*
+### 成员函数 ###
+CurrentMember, Parent, PrevMember, ParallelPeriod, Ancestor
+#### CurrentMember ####
+	*Returns the current member of a dimension*
+	*is label on row or column, or filter label*
+	*is default function for a dimension*
+	*appears in member group of functions list*
+	*un-assign means All Member in All Level*
+#### Parent ####
+	*Returns the parent of the specified member*
+	*often follows the currentmember function*
+	*appears in the member group of the functions list*
+#### PrevMember ####
+	Returns previous member on same level
+	Can be used with any dimension, but is typically used with time dimension
+	Appears in the member group of the function list
+#### ParallelPeriod ####
+	
+#### Ancestor ####
+	*Returns the ancestor of a member*
+		at a specified level
+		at a specified distnace in the hierarchy
+	*Equivalent to parent function when distance =1*
+
+### 逻辑函数 ###
+IsEmpty
+#### IsEmpty ####
+	Returns true if specified value is empty
+	Use to avoid division by zero and other errors
+	requires two Levels of parentheses if expression is tuple with multiple dimensions
+	appears in the logical group of the functions list
+### 阶层函数 ###
+Level, Hierarchy, Dimension
+#### Level ####
+	*Returns Level of a member*
+	*often follows the currentMember function*
+	*can be followed by the name function*
+	*appears in the level group of the functions list*
+### EXCEL & VBA函数 ###
+VAL, IIF
+#### VAL ####
+	*Converts a string to a number*
+	*is useful for converting a member property to a number*
+	*is a VBA Function, not an MDX function*
+	*VBA and EXCEL functions are automatically available*
+#### IIF ####	
+	*Returns one of two values based on conditional expression*
+	*Returns first value if true, second value if false*
+	*IIF stands for immediate IF, similar to VBA IIF Function or EXCEL IF Function*
+	*Both expressions must be same data type*
+
