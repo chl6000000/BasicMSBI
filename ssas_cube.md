@@ -31,7 +31,8 @@ CurrentMember, Parent, PrevMember, ParallelPeriod, Ancestor
 	return a member of a previous member with the same relative position.
 	default value,
 		if no specify hierarchy or member expression, default value is Time type dimension, Time.CurrentMember.
-		If point specify hierarchy expression, but not point specify member expression, default value is Level_Expression.Hierarchy.CurrentMember.
+		If point specify hierarchy expression, but not point specify member expression,
+		default value is Level_Expression.Hierarchy.CurrentMember.
 		Default index value is 1. 
 		Default hierarchy is the hierarchy of specify member ' parent. 
 #### Ancestor ####
@@ -76,6 +77,15 @@ Time.[2nd half]
 单元格的值,要分析的值，用多维数据集中与维度关系组合成度量值组。这些值是基于要分析的事实数据。
 度量值定义哪些数据可供分析，用什么形式，按什么规则变换数据。
 度量值组定义数据如何绑定到多维数据集的多维空间。
+### AggregateFunction ### 
+确定如何从事实空间数据值计算多维空间的数据。
+累加聚合：sum, count, Min & Max
+非累加聚合：DistincCount, None
+半累加聚合：FirstChild, LastChild, FirstNonEmpty, LastNonEmpty, AverageOfChildren & ByAccount
+### Granularity(粒度) ###
+粒度是度量值组的属性，定义其长度，复杂度和与多维数据集的绑定方法。
+
+
 
 ## 集 ##
 Set, Multiple Members on an Axis.
