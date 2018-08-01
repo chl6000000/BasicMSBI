@@ -8,13 +8,19 @@
 <body>
 	<button id="btn">press</button>
 </body>
-<script type="text/javascript">
-
-document.getElementById("btn").onclick=function(){
-	top.postMessage("hello message","http://localhost:65270");
-}
-
-</script>
 </html>
 
+<script type="text/javascript">
+    window.addEventListener("message",
+        function (e) {
+            alert(e.data);
+            console.log("[" + window.location.host + "] receive data: " + e.data);
+        }, false);
+
+    document.getElementById("btn").onclick = function ()
+    {
+        top.postMessage("hello message", "http://localhost:65270");
+    }
+
+</script>
 
